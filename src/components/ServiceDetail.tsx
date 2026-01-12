@@ -21,7 +21,7 @@ const ServiceDetail = () => {
     const parent = target.parentElement;
     if (parent) {
       parent.classList.add('bg-[#1e3a5f]');
-      parent.style.backgroundImage = `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`;
+      parent.style.backgroundImage = `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`;
     }
   };
 
@@ -98,11 +98,12 @@ const ServiceDetail = () => {
 
       {/* Content */}
       <div className="py-24 bg-white relative overflow-hidden">
-        <div className="hidden lg:block absolute top-24 left-10 writing-vertical text-stone-100 text-[12rem] font-zen font-black select-none opacity-60 leading-none">
+        {/* Fixed: Added -z-10 to ensure the background text is behind the content */}
+        <div className="hidden lg:block absolute top-24 left-10 writing-vertical text-stone-100 text-[12rem] font-zen font-black select-none opacity-40 leading-none -z-10">
             {service.id.toUpperCase()}
         </div>
 
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Lead Paragraph */}
             <div className="text-xl md:text-2xl font-medium leading-loose text-stone-800 mb-16 first-letter:text-6xl first-letter:font-zen first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-[#b93a32] first-letter:leading-none">
@@ -155,7 +156,7 @@ const ServiceDetail = () => {
             </div>
 
             {/* Link Section */}
-            {service.links && (
+            {service.links && service.links.length > 0 && (
               <div className="mt-16 bg-[#fcfaf5] p-8 md:p-12 border-t border-stone-200">
                 <h3 className="text-lg font-zen font-bold mb-8 text-stone-900 tracking-wider flex items-center gap-3">
                     <span className="w-8 h-[1px] bg-[#b93a32]"></span>
