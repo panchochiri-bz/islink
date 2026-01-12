@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, ChevronRight, Facebook, Twitter, Instagram } from 'lucide-react';
 import { COMPANY_INFO } from '../constants';
-import { NavLink } from '../types';
+import type { NavLink } from '../types';
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
