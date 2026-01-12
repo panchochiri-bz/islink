@@ -67,31 +67,37 @@ const Top = () => {
         </div>
       </section>
 
-      {/* Intro Section - Vertical Layout */}
+      {/* Intro Section - Vertical Layout Adjusted for Alignment */}
       <section className="py-32 bg-white relative">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row gap-16 items-start">
-            <div className="md:w-1/3 relative">
-              <h2 className="text-4xl md:text-5xl font-zen font-black text-stone-900 leading-tight writing-vertical h-64 md:h-auto text-left md:text-right border-l md:border-l-0 md:border-r border-[#b93a32] pl-4 md:pr-8 py-2">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+            {/* Title Side: Fixed alignment with top-0 or small negative margin to match line-height */}
+            <div className="md:w-1/3 relative flex md:justify-end">
+              <h2 className="text-4xl md:text-5xl font-zen font-black text-stone-900 leading-tight writing-vertical border-l md:border-l-0 md:border-r border-[#b93a32] pl-4 md:pr-8 pt-1 md:pt-0">
                 社会インフラの
                 <br />
                 未来を描く
               </h2>
-              <span className="absolute -top-10 -left-4 md:left-auto md:-right-4 text-9xl font-serif text-stone-100 -z-10 font-bold opacity-70">
+              <span className="absolute -top-10 -left-4 md:left-auto md:-right-8 text-9xl font-serif text-stone-100 -z-10 font-bold opacity-70 select-none">
                 01
               </span>
             </div>
-            <div className="md:w-2/3 pt-4 md:pt-12">
-              <p className="text-lg leading-loose text-stone-600 font-medium mb-8 text-justify">
+            
+            {/* Content Side: Ensure top alignment with the title text */}
+            <div className="md:w-2/3">
+              <p className="text-lg leading-loose text-stone-600 font-medium mb-10 text-justify">
                 株式会社アイズリンクは、人々の生活と産業活動に不可欠な「基盤」を構築・維持するプロフェッショナル集団です。
                 私たちは、ビルメンテナンスから再生可能エネルギー、特殊な地質調査、そして最先端のモータースポーツ技術まで、
                 幅広い領域で培った専門知識と情熱を結集し、持続可能な社会の実現に貢献します。
               </p>
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
-                alt="Infrastructure"
-                className="w-full h-64 md:h-80 object-cover grayscale hover:grayscale-0 transition-all duration-1000 shadow-xl"
-              />
+              <div className="relative group overflow-hidden shadow-2xl rounded-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
+                  alt="Infrastructure"
+                  className="w-full h-64 md:h-96 object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                />
+                <div className="absolute inset-0 border border-black/5 group-hover:border-black/0 transition-colors pointer-events-none"></div>
+              </div>
             </div>
           </div>
         </div>
