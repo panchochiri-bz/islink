@@ -24,6 +24,10 @@ const Company = () => {
                   <td className="py-6 text-stone-900 font-medium text-lg">{COMPANY_INFO.name}</td>
                 </tr>
                 <tr className="flex flex-col md:table-row">
+                  <th className="py-6 pr-6 font-zen font-bold text-stone-500 align-top text-sm tracking-wider">英語商号</th>
+                  <td className="py-6 text-stone-800">I’s Link LTD</td>
+                </tr>
+                <tr className="flex flex-col md:table-row">
                   <th className="py-6 pr-6 font-zen font-bold text-stone-500 align-top text-sm tracking-wider">所在地</th>
                   <td className="py-6 text-stone-800 leading-relaxed">
                     {COMPANY_INFO.address}<br/>

@@ -4,7 +4,7 @@ export const COMPANY_INFO = {
   name: '株式会社アイズリンク',
   enName: 'Is Link Co., Ltd.',
   address: '〒183-0005 東京都府中市若松町1-2-7 森下ビル1階',
-  ceo: '代表取締役 佐々木 雄生也',
+  ceo: '佐々木 雄生也',
   established: '2012年11月22日',
   capital: '7,000千円',
   license: '東京都知事許可 第139608号',
@@ -12,7 +12,7 @@ export const COMPANY_INFO = {
   securityLicense: '東京都公安委員会 第30004921号',
   realEstateLicense: '東京都知事（1）第106674号',
   services:
-    'ビルメンテナンス事業、再生可能エネルギーOM事業、一般建築・解体事業、地質調査・地盤改良事業、モータースポーツ事業',
+    'ビルメンテナンス業、再生可能エネルギーOM事業、一般建築・解体事業、地質調査・地盤改良事業、モータースポーツ事業',
   employees: '120名 (2024年10月現在)',
   phone: '042-306-9082',
   email: 'info@islink.co.jp',
@@ -24,7 +24,7 @@ export const SERVICES: Service[] = [
     path: '/business/building-maintenance',
     heroImage:
       'https://placehold.co/800x500/f3f4f6/9ca3af?text=Image+Coming+Soon',
-    title: '資産価値を最大化する\n総合ビルメンテナンス',
+    title: 'ビルメンテナンス事業',
     content: `株式会社アイズリンクのビルメンテナンス事業は、建物の資産価値を長期にわたって維持・向上させることを目的とした総合的な管理サービスを提供しています。オフィスビル、商業施設、集合住宅など、あらゆる種類の建物に対応し、お客様が安心して施設を利用できる環境を創造します。
 
 当社のサービスは、日常清掃や定期清掃といった衛生管理から、空調設備、給排水設備、電気設備などの設備管理、さらには建物の老朽化を防ぐための大規模修繕計画の立案・実行まで多岐にわたります。私たちは単なる「管理」に留まらず、LCC（ライフサイクルコスト）の最適化を視点に入れたコンサルティングを行い、オーナー様の収益最大化をサポートします。
@@ -36,7 +36,7 @@ export const SERVICES: Service[] = [
     path: '/business/renewable-energy',
     heroImage:
       'https://placehold.co/800x500/f3f4f6/9ca3af?text=Image+Coming+Soon',
-    title: '再エネ発電効率を極大化する\nオペレーション＆メンテナンス',
+    title: '再生可能エネルギーOM事業',
     content: `再生可能エネルギーOM事業は、導入された太陽光発電所や風力発電所などのパフォーマンスを最大化し、安定した発電を保証するための不可欠なサービスです。株式会社アイズリンクは、大規模なメガソーラー施設を中心に、設備の設計寿命を通じて最大の収益を生み出すための包括的な運用・保守管理サービスを提供しています。
 
 私たちは、改正再エネ法への適合確認から、遠隔監視システムを用いた24時間の稼働状況チェック、定期的な法定点検、さらにはパネルの洗浄や敷地内の除草といった物理的なメンテナンスまでを一貫して引き受けます。故障の兆候を早期に発見する「予防保全」に注力することで、ダウンタイムを最小限に抑え、発電ロスを徹底的に排除します。
@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
     path: '/business/construction',
     heroImage:
       'https://placehold.co/800x500/f3f4f6/9ca3af?text=Image+Coming+Soon',
-    title: '高品質な施工と 環境に配慮した一般建築業',
+    title: '一般建築・解体事業',
     content: `株式会社アイズリンクの一般建築業は、「安全第一」をモットーに、新築からリノベーション、電力インフラ整備、そして建物の寿命を終えた際の解体工事までを一貫して手掛ける総合的なサービスです。一般建築分野では、商業施設、工場、オフィス、戸建て住宅などの多様なニーズに応じた設計・施工管理を提供しています。`,
   },
   {
@@ -56,7 +56,7 @@ export const SERVICES: Service[] = [
     path: '/business/geotechnical',
     heroImage:
       'https://placehold.co/800x500/f3f4f6/9ca3af?text=Image+Coming+Soon',
-    title: '地下の安全性を科学的に証明し\n永続的な安心を提供',
+    title: '地質調査・地盤改良事業',
     content: `地質調査・地盤改良事業は、すべての建設プロジェクトの土台となる「地盤の安全性」と「適応性」を科学的に評価し、必要に応じて強化する専門性の高いサービスです. 株式会社アイズリンクは、詳細なデータを取得するため、ボーリング調査、SWS試験、各種サンプリングといった多角的な地質調査を実施します.
 
 私たちの調査は単なる数値報告に留まりません. 地層の構成や地下水位、過去の被災履歴などを総合的に分析し、液状化リスクや土壌汚染の可能性まで含めた詳細なリスク診断を行います. その結果に基づき、最適な地盤改良工法（鋼管杭、柱状改良、表層改良など）を提案・施工することで、不動産価値の守護者として、建物の不等沈下や地震時の被害を未然に防ぎます.
@@ -68,16 +68,28 @@ export const SERVICES: Service[] = [
     path: '/business/motorsports',
     heroImage:
       'https://placehold.co/800x500/f3f4f6/9ca3af?text=Image+Coming+Soon',
-    title: '業界の発展と人材の育成を加速させる・モータースポーツ事業',
+    title: 'モータースポーツ事業',
     content: `株式会社アイズリンクのモータースポーツ事業は、一般社団法人モトライダースサポート（MRS）をはじめ様々な企業・団体との連携及びレーシングチーム「I’s Racing」の運営を通じて、業界の発展と人材育成に貢献しています. サーキット走行会の運営やレンタルバイク事業などを展開し、モータースポーツが持つ可能性を社会全体の活力へと変えていきます.`,
     links: [
       {
         label: '一般社団法人MRSモトライダースサポート 公式サイト',
-        url: 'https://www.mrs.or.jp',
+        url: 'https://www.mrs.or.jp/',
       },
       {
-        label: 'I’s Racing 公式Facebook',
-        url: 'https://www.facebook.com/IsRacingOfficial',
+        label: '一般社団法人Peacemaker',
+        url: 'https://www.peace-maker.org/',
+      },
+      {
+        label: 'Polariss',
+        url: 'https://www.thingsline.co.jp/',
+      },
+      {
+        label: 'I’s Racing',
+        url: 'https://is-racing.staticrun.app/',
+      },
+      {
+        label: 'レースサポート',
+        url: '/business/motorsports/race-support',
       },
     ],
   },

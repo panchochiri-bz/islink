@@ -5,6 +5,7 @@ import Top from './components/Top';
 import Company from './components/Company';
 import Business from './components/Business';
 import ServiceDetail from './components/ServiceDetail';
+import RaceSupport from './components/RaceSupport';
 import Contact from './components/Contact';
 
 function ScrollToTop() {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/" element={<Top />} />
           <Route path="/company" element={<Company />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/business/motorsports/race-support" element={<RaceSupport />} />
           <Route path="/business/:slug" element={<ServiceDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight } from 'lucide-react';
@@ -110,6 +111,35 @@ const ServiceDetail = () => {
                {paragraphs[0]}
             </div>
 
+            {/* Link Section */}
+            {service.links && service.links.length > 0 && (
+              <div className="mb-16">
+                <h3 className="text-lg font-zen font-bold mb-6 text-stone-900 tracking-wider flex items-center gap-3">
+                    <span className="w-8 h-[1px] bg-[#b93a32]"></span>
+                    関連リンク
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {service.links.map((link, idx) => (
+                    link.url.startsWith('/') ? (
+                      <Link key={idx} to={link.url} className="group flex items-center justify-between p-6 bg-white border border-stone-200 hover:border-[#1e3a5f] hover:shadow-lg transition-all duration-300 rounded-sm">
+                        <span className="text-stone-800 font-bold group-hover:text-[#1e3a5f] transition-colors">{link.label}</span>
+                        <div className="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-[#1e3a5f] group-hover:text-white transition-all">
+                          <ArrowRight size={18} />
+                        </div>
+                      </Link>
+                    ) : (
+                      <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-6 bg-white border border-stone-200 hover:border-[#1e3a5f] hover:shadow-lg transition-all duration-300 rounded-sm">
+                        <span className="text-stone-800 font-bold group-hover:text-[#1e3a5f] transition-colors">{link.label}</span>
+                        <div className="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-[#1e3a5f] group-hover:text-white transition-all">
+                          <ArrowRight size={18} />
+                        </div>
+                      </a>
+                    )
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Gallery Image 1 */}
             <div className="mb-20 relative">
                <div className="aspect-[16/9] overflow-hidden shadow-2xl rounded-sm bg-stone-100">
@@ -154,28 +184,6 @@ const ServiceDetail = () => {
                  <p key={i} className="mb-8">{para}</p>
                ))}
             </div>
-
-            {/* Link Section */}
-            {service.links && service.links.length > 0 && (
-              <div className="mt-16 bg-[#fcfaf5] p-8 md:p-12 border-t border-stone-200">
-                <h3 className="text-lg font-zen font-bold mb-8 text-stone-900 tracking-wider flex items-center gap-3">
-                    <span className="w-8 h-[1px] bg-[#b93a32]"></span>
-                    関連リンク
-                </h3>
-                <ul className="space-y-6">
-                  {service.links.map((link, idx) => (
-                    <li key={idx}>
-                      <a href={link.url} className="text-[#1e3a5f] hover:text-[#b93a32] flex items-center gap-4 transition-all group">
-                        <div className="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center group-hover:bg-[#1e3a5f] group-hover:text-white transition-all">
-                            <ArrowRight size={16} />
-                        </div>
-                        <span className="text-lg font-medium border-b border-stone-200 group-hover:border-[#b93a32] pb-1 transition-all">{link.label}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
 
             <div className="mt-32 pt-20 border-t border-stone-100 text-center">
                <span className="text-xs text-stone-400 font-sans tracking-[0.4em] uppercase mb-4 block">Consultation</span>
