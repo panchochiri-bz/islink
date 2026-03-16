@@ -39,7 +39,7 @@ const Top = () => {
               className="text-lg md:text-xl text-stone-600 max-w-lg mb-12 leading-loose font-medium tracking-wider border-l-4 border-[#b93a32] pl-6 fade-in-up"
               style={{ animationDelay: '0.4s' }}
             >
-              『WeではなくIの集合体』
+              『「I’s」にはWe(私達)ではなく、I(私)の集合体でありたいとの思いが込められています。』
             </p>
           </div>
         </div>
