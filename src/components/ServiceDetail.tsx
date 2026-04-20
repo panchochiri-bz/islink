@@ -30,33 +30,33 @@ const ServiceDetail = () => {
     switch (id) {
       case 'building-maintenance':
         return [
-          "https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800"
+          "https://i.ibb.co/tMWBc2p1/2716958-m.jpg",
+          "https://i.ibb.co/tMWBc2p1/2716958-m.jpg"
         ];
       case 'renewable-energy':
         return [
-          "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=800"
+          "https://i.ibb.co/j9gm6v7w/2026-04-17-0-15-46.png",
+          "https://i.ibb.co/j9gm6v7w/2026-04-17-0-15-46.png"
         ];
       case 'construction':
         return [
-          "https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800"
+          "https://i.ibb.co/rKLfcRFj/27726987-s.jpg",
+          "https://i.ibb.co/rKLfcRFj/27726987-s.jpg"
         ];
       case 'geotechnical':
         return [
-          "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?auto=format&fit=crop&q=80&w=800"
+          "https://i.ibb.co/NdkVVRSP/4615028-s.jpg",
+          "https://i.ibb.co/NdkVVRSP/4615028-s.jpg"
         ];
       case 'motorsports':
         return [
-          "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=800"
+          "https://i.ibb.co/qM6p1TVY/2026-04-16-23-58-54.png",
+          "https://i.ibb.co/qM6p1TVY/2026-04-16-23-58-54.png"
         ];
       default:
         return [
-          "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+          "https://i.ibb.co/h1WWBbBd/2026-04-17-0-06-39.png",
+          "https://i.ibb.co/h1WWBbBd/2026-04-17-0-06-39.png"
         ];
     }
   };
@@ -67,17 +67,16 @@ const ServiceDetail = () => {
   return (
     <div className="flex flex-col w-full bg-white">
       {/* Hero */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-stone-900">
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-black">
+        <div className="absolute inset-0">
            <img 
             src={service.heroImage} 
             alt={service.title} 
             className="w-full h-full object-cover opacity-60 scale-105" 
             onError={handleImageError}
-            style={{ filter: 'grayscale(15%)' }}
            />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-white/10"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
            <h1 className="text-3xl md:text-5xl font-zen font-bold leading-normal tracking-wide whitespace-pre-line mb-8 drop-shadow-2xl">
              {service.title}
@@ -147,40 +146,23 @@ const ServiceDetail = () => {
                     src={galleryImages[0]} 
                     alt="Process 1" 
                     className="w-full h-full object-cover saturate-[0.8] hover:saturate-100 transition-all duration-700" 
-                    onError={handleImageError}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallbackApplied) {
+                        target.dataset.fallbackApplied = 'true';
+                        target.src = service.heroImage;
+                      } else {
+                        handleImageError(e);
+                      }
+                    }}
                   />
                </div>
                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#fcfaf5] -z-10 border border-stone-200"></div>
             </div>
 
             {/* Content Mid */}
-            <div className="prose prose-stone prose-lg max-w-none text-stone-600 leading-loose font-light mb-20 text-justify">
-               {paragraphs.slice(1, Math.max(2, paragraphs.length - 1)).map((para, i) => (
-                 <p key={i} className="mb-8">{para}</p>
-               ))}
-            </div>
-
-            {/* Gallery Image 2 - Offset Layout */}
-            <div className="mb-20 grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-               <div className="md:col-span-3 aspect-[4/3] overflow-hidden shadow-xl rounded-sm bg-stone-100">
-                  <img 
-                    src={galleryImages[1]} 
-                    alt="Process 2" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
-                    onError={handleImageError}
-                  />
-               </div>
-               <div className="md:col-span-2">
-                  <h4 className="text-xl font-zen font-bold text-stone-900 mb-4 border-l-2 border-[#b93a32] pl-4">現場品質へのこだわり</h4>
-                  <p className="text-sm text-stone-500 leading-relaxed font-light">
-                    アイズリンクは、目に見える成果だけでなく、その過程にある安全性、環境配慮、そして技術の研鑽を最も大切にしています。
-                  </p>
-               </div>
-            </div>
-
-            {/* Remaining Paragraphs */}
-            <div className="prose prose-stone prose-lg max-w-none text-stone-600 leading-loose font-light mb-16 text-justify">
-               {paragraphs.slice(Math.max(2, paragraphs.length - 1)).map((para, i) => (
+            <div className="prose prose-stone prose-lg max-w-none text-stone-600 leading-loose font-light mb-20 text-justify whitespace-pre-line">
+               {paragraphs.slice(1).map((para, i) => (
                  <p key={i} className="mb-8">{para}</p>
                ))}
             </div>

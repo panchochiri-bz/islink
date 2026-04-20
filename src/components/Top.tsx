@@ -39,30 +39,30 @@ const Top = () => {
               className="text-lg md:text-xl text-stone-600 max-w-lg mb-12 leading-loose font-medium tracking-wider border-l-4 border-[#b93a32] pl-6 fade-in-up"
               style={{ animationDelay: '0.4s' }}
             >
-              『「I’s」にはWe(私達)ではなく、I(私)の集合体でありたいとの思いが込められています。』
+              「I’s」にはWe(私達)ではなく、I(私)の集合体でありたいとの思いが込められています。
             </p>
           </div>
         </div>
       </section>
 
-      {/* Intro Section - Vertical Layout */}
+      {/* Intro Section */}
       <section className="py-32 bg-white relative">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
-            <div className="md:w-1/3 relative flex md:justify-end">
-              <h2 className="text-4xl md:text-5xl font-zen font-black text-stone-900 leading-tight writing-vertical border-l md:border-l-0 md:border-r border-[#b93a32] pl-4 md:pr-8 pt-1 md:pt-0">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
+            <div className="md:w-1/2 relative">
+              <h2 className="text-4xl md:text-5xl font-zen font-black text-stone-900 leading-[1.4] border-l-4 border-[#b93a32] pl-6 py-2">
                 オーナー様と共に
                 <br />
                 未来を描く
               </h2>
-              <span className="absolute -top-10 -left-4 md:left-auto md:-right-8 text-9xl font-serif text-stone-100 -z-10 font-bold opacity-70 select-none">
+              <span className="absolute -top-12 -left-2 md:-top-16 md:-left-4 text-9xl md:text-[10rem] font-serif text-stone-100 -z-10 font-bold opacity-70 select-none leading-none">
                 01
               </span>
             </div>
-            <div className="md:w-2/3">
+            <div className="md:w-1/2">
               <p className="text-lg leading-loose text-stone-600 font-medium mb-10 text-justify">
-                株式会社アイズリンクは、人々の生活と産業活動に不可欠な「基盤」を構築・維持するプロフェッショナル集団です。
-                私たちは、ビルメンテナンスから再生可能エネルギー、高品質な建設、地盤調査、そしてアセットマネジメントまで、
+                人々の生活と産業活動に不可欠な「基盤」を構築・維持するプロフェッショナル集団です。
+                ビルメンテナンスから再生可能エネルギー、建設、地盤調査、そしてアセットマネジメントまで、
                 幅広い領域で培った専門知識と情熱を結集し、持続可能な社会の実現に貢献します。
               </p>
               <div className="relative group overflow-hidden shadow-2xl rounded-sm">
